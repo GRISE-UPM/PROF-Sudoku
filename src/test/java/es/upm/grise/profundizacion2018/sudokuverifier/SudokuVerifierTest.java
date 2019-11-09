@@ -81,6 +81,21 @@ SudokuVerifier objeto;
 	} 
 	
 	
+	@Test //El primer subgrid repite los numeros '1', '2' y '3'
+	public void testGridRepetido() throws Exception {
+		String solucion = "123456789"
+		 				+ "234567891"
+		 				+ "345678912"
+		 				+ "456789123"
+		 				+ "567891234"
+		 				+ "678912345"
+		 				+ "789123456"
+		 				+ "891234567"
+		 				+ "912345678";
+		assertEquals(objeto.verify(solucion),-2,0);
+	}
+	
+	
 	@Test //Se repite el numero '2' de la primera fila.
 	public void testFilaRepetida() throws Exception {
 		String solucion = "125892367"
@@ -96,23 +111,9 @@ SudokuVerifier objeto;
 	}
 	
 	
-	@Test //Se repite el numero '1' en la primera columna.
+	@Test //Se repite el numero '4' en la primera columna.
 	public void testColumnaRepetida() throws Exception {
-		String solucion = "145892367"
- 						+ "627134958"
- 						+ "893567124"
- 						+ "159413876"
- 						+ "376958241"
- 						+ "428276593"
- 						+ "964385712"
- 						+ "731629485"
- 						+ "582741639";
-		assertEquals(objeto.verify(solucion),-3,0);
-	}
-	
-	@Test //Se repite el numero '1' en el segundo sub-grid (centro-arriba).
-	public void testGridRepetido() throws Exception {
-		String solucion = "145192367"
+		String solucion = "415892367"
 		 				+ "627134958"
 		 				+ "893567124"
 		 				+ "259413876"
@@ -121,8 +122,9 @@ SudokuVerifier objeto;
 		 				+ "964385712"
 		 				+ "731629485"
 		 				+ "582741639";
-		assertEquals(objeto.verify(solucion),-2,0);
+		assertEquals(objeto.verify(solucion),-4,0);
 	}
+	
 	
 	
 	@Test //solucion correcta introducida

@@ -40,11 +40,8 @@ public class SudokuVerifier
 		for(int row = 0; row < 9; row++)
 		   for(int col = 0; col < 8; col++)
 		      for(int col2 = col + 1; col2 < 9; col2++)
-		         if(tablero[row][col]==tablero[row][col2]) { 
-		        	 System.out.println(row);
+		         if(tablero[row][col]==tablero[row][col2])
 		            return -3;
-		         }
-		         
 		         
 
 		// regla 4:
