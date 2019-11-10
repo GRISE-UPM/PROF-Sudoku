@@ -56,10 +56,10 @@ public class SudokuVerifier
 
 	private boolean isEqualColum(int[][] sudoku) {
 		// TODO Auto-generated method stub
-		for(int col = 0; col < 9; col++) {
-			   for(int row = 0; row < 8; row++) {
-			      for(int row2 = row + 1; row2 < 9; row2++) {
-			         if(sudoku[row][col]==sudoku[row2][col])
+		for(int columna = 0; columna < 9; columna++) {
+			   for(int fila = 0; fila < 8; fila++) {
+			      for(int fila2 = fila + 1; fila2 < 9; fila2++) {
+			         if(sudoku[fila][columna]==sudoku[fila2][columna])
 			            return true;
 			      }
 			   }
@@ -69,10 +69,10 @@ public class SudokuVerifier
 
 	private boolean isEqualRaw(int[][] sudoku) {
 		// TODO Auto-generated method stub
-		for(int row = 0; row < 9; row++) {
-			   for(int col = 0; col < 8; col++) {
-			      for(int col2 = col + 1; col2 < 9; col2++) {
-			         if(sudoku[row][col]==sudoku[row][col2])
+		for(int fila = 0; fila < 9; fila++) {
+			   for(int columna = 0; columna < 8; columna++) {
+			      for(int columna2 = columna + 1; columna2 < 9; columna2++) {
+			         if(sudoku[fila][columna]==sudoku[fila][columna2])
 			            return true;
 			      }
 			   }
@@ -82,11 +82,11 @@ public class SudokuVerifier
 
 	private boolean isEqualSector(int[][] sudoku) {
 		// TODO Auto-generated method stub
-		for(int row = 0; row < 9; row += 3) {
-			   for(int col = 0; col < 9; col += 3) {
+		for(int fila = 0; fila < 9; fila += 3) {
+			   for(int columna = 0; columna < 9; columna += 3) {
 				   for(int pos = 0; pos < 8; pos++) {
 					   for(int pos2 = pos + 1; pos2 < 9; pos2++)
-				            if(sudoku[row + pos%3][col + pos/3]==sudoku[row + pos2%3][col + pos2/3])
+				            if(sudoku[fila + pos%3][columna + pos/3]==sudoku[fila + pos2%3][columna + pos2/3])
 				               return true;
 				   }
 			   }
@@ -96,9 +96,9 @@ public class SudokuVerifier
 
 	private boolean isNegative(int[][] sudoku) {
 		// TODO Auto-generated method stub
-		for(int row = 0; row < 9; row++) {
-			   for(int col = 0; col < 9; col++) {
-			         if(sudoku[row][col]<0)
+		for(int fila = 0; fila < 9; fila++) {
+			   for(int columna = 0; columna < 9; columna++) {
+			         if(sudoku[fila][columna]<0)
 			            return true;
 			   }
 		}
