@@ -19,6 +19,32 @@ public class SudokuVerifierTest {
 												"912345678"));
     }
 	
+	@Test	// Test correcto
+	public void test_longitud() {
+		assertEquals(-1, SudokuVerifier.verify(	"123456789"+
+												"456789123"+
+												"789123456"+
+												"234567891"+
+												"567891234"+
+												"891234567"+
+												"345678912"+
+												"678912345"+
+												"9123456781"));
+	}
+	
+	@Test	// Test correcto
+	public void test_caracterIncorrecto() {
+		assertEquals(-1, SudokuVerifier.verify(	"1234-6789"+
+												"456789123"+
+												"789123456"+
+												"234567891"+
+												"567891234"+
+												"891234567"+
+												"345678912"+
+												"678912345"+
+												"912345678"));
+	}
+	
 	@Test	// Falla por subgrids
 	public void test_subgrids() {
 		assertEquals(-2, SudokuVerifier.verify(	"123456789"+
