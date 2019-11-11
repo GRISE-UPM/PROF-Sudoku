@@ -26,10 +26,6 @@ public class SudokuVerifier
 				
 				//Check whether rule #1 is met or not: solution doesn't contain negative numbers
 				if (read_input == '-') {
-					/*char_counter ++;
-					read_input = candidateSolution.charAt(char_counter);
-					int number = Character.getNumericValue(read_input);
-					global_grid[col][row] = -number;*/
 					return -1;
 				}
 				
