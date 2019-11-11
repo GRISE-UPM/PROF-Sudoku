@@ -19,7 +19,7 @@ public class SudokuVerifierTest {
 												"912345678"));
     }
 	
-	@Test	// Test correcto
+	@Test	// Falla por longitud del input
 	public void test_longitud() {
 		assertEquals(-1, SudokuVerifier.verify(	"123456789"+
 												"456789123"+
@@ -32,7 +32,7 @@ public class SudokuVerifierTest {
 												"9123456781"));
 	}
 	
-	@Test	// Test correcto
+	@Test	// Falla por caracter incorrecto en el input
 	public void test_caracterIncorrecto() {
 		assertEquals(-1, SudokuVerifier.verify(	"1234-6789"+
 												"456789123"+
