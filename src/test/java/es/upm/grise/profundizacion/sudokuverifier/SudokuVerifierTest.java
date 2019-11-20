@@ -1,4 +1,4 @@
-package es.upm.grise.profundizacion2018.sudokuverifier;
+package es.upm.grise.profundizacion.sudokuverifier;
 
 import static org.junit.Assert.fail;
 
